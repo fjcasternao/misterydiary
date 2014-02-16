@@ -21,8 +21,9 @@ public class Dibujo {
                                           // y0 - coordenada y a la izq donde comienza
     }
     
-    public void dibujarCuadrado(Graphics g, int x0, int y0, int altura, int anchura){
-        g.setColor(new Color((float)Math.random(),(float)Math.random(),(float)Math.random()));
+    public void dibujarCuadrado(Graphics g, int x0, int y0, int altura, int anchura, Color color){
+       // g.setColor(new Color((float)Math.random(),(float)Math.random(),(float)Math.random()));
+        g.setColor(color);
         g.fillRect(x0, y0, anchura, altura); // comienza a dibujarlo en la esquina superior izq
     }
     
