@@ -40,9 +40,10 @@ public class MisteryLogica {
                 remainingTime =(interval-( System.currentTimeMillis() - initialTime))/1000;
                 if (remainingTime <= 0)
                 {
-                    System.out.println("Se acabo el tiempo");
+                    Panel_dibujo.jLabel1.setText("FIN!");
                     countdownTimer.cancel();
                 }
+                Panel_dibujo.jLabel1.setText(Long.toString(remainingTime));
                 System.out.println(remainingTime);
                
             }
