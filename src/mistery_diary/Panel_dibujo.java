@@ -50,8 +50,7 @@ public class Panel_dibujo extends javax.swing.JFrame {
             int anchura = Math.abs(px1-px0);
             int altura = Math.abs(py1-py0);
             
-            g.setColor(color);
-            g.fillRect(px0, py0, anchura, altura);
+            dibujo.dibujarCuadrado(panel_dibujo.getGraphics(), px0, py0, altura, anchura,color);
         }
     }
 
@@ -242,7 +241,7 @@ public class Panel_dibujo extends javax.swing.JFrame {
             int x=p.x;
             int y=p.y;
 
-            for(int i=0;i<vectorCuadrados.size();i++){
+            for(int i=vectorCuadrados.size()-1;i>0;i--){
                 int px0 = vectorCuadrados.get(i).getX0();
                 int px1 = vectorCuadrados.get(i).getX1();
                 int py0 = vectorCuadrados.get(i).getY0();
@@ -252,15 +251,16 @@ public class Panel_dibujo extends javax.swing.JFrame {
                     if(y>py0 && y<py1){
                         //Eliminamos el cuadrado seleccionado
                         vectorCuadrados.remove(i);
-                        System.out.println(vectorCuadrados.size());
+                        System.out.println(vectorCuadrados.size()); 
+                        break;
                     }
                 }
             }
-            panel_dibujo.repaint();
+            repaint();
         }
     }//GEN-LAST:event_panel_dibujoMouseClicked
 
-    
+
     
     /**
      * @param args the command line arguments
